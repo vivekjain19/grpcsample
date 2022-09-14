@@ -1,11 +1,11 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Users;
-using static Users.Users;
 
 namespace GrpcService.Services
 {
-    public class UsersService : UsersBase
+    //[Authorize]
+    public class UsersService : Users.Users.UsersBase
     {
         private readonly ILogger<UsersService> logger;
 
@@ -37,10 +37,6 @@ namespace GrpcService.Services
             {
                 await responseStream.WriteAsync(user);
             }
-
-            await responseStream.WriteAsync(UsersDB.Users[0]);
-
-            await responseStream.WriteAsync(UsersDB.Users[0]);
 
         }
     }

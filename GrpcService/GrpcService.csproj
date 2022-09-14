@@ -7,12 +7,18 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Protobuf Include="Protos\users.proto" GrpcServices="Server" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
 		<PackageReference Include="Grpc.AspNetCore.Web" Version="2.47.0" />
 	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Protos\users.proto" GrpcServices="None" />
+	</ItemGroup>
+
+	<ProjectExtensions>
+		<VisualStudio>
+			<UserProperties appsettings_1development_1json__JsonSchema="https://docs.renovatebot.com/renovate-schema.json" />
+		</VisualStudio>
+	</ProjectExtensions>
 
 </Project>
